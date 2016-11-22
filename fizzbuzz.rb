@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 def fizzbuzz(range, triggers)
-  range.each do |i|
+  range.map do |i|
     result = []
     triggers.each do |text, predicate|
       result << text if predicate.call(i)
@@ -9,7 +9,7 @@ def fizzbuzz(range, triggers)
   end
 end
 
-fizzbuzz(1..100,
+p fizzbuzz(1..100,
          [
            ['Fizz', ->(i) { (i % 3).zero? }],
            ['Buzz', ->(i) { (i % 5).zero? }]
